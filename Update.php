@@ -1,57 +1,67 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-<title> Consume Partner WSDL of Salesforce using PHP
-</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phone Changer</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
+    
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Phone Number Changer</a>
+            </div>
+        </div>
+    </nav>
 
-hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-<!--<div id="wrapper">
-	<div id="page1">
-		<div id="page-bgtop">
-			<div id="page-bgbtm">
-				<div id="content">
-					<div class="post">
-						<h2 class="title"><a href="#"> Force.com Toolkit for PHP </a></h2>
-						<p class="meta"><span class="date">Using Partner WSDL</span><span class="posted">WebService</span></p>
-						<div style="clear: both;">&nbsp;</div>
-						<div class="entry">
-								<a href="javascript:void(0);">							
-								<?php
-									echo "Results of query '$query'<br/><br/>\n";
-								?>
-								</a>
-							<table>
-								<tr>
-									<th>Contact ID </th>
-									<th>First Name</th>
-									<th> Last Name </th>
-									<th>Phone </th>
-								</tr>
-								<?php
-									foreach ($response->records as $record) {
-										echo '<tr> 
-													<td>'.$record->Id.'</td>
-													<td>'.$record->fields->FirstName.'</td>
-													<td>'.$record->fields->LastName.'</td>
-													<td>'.$record->fields->Phone.'</td>
-											 </tr>';
-										 }
-								?>
-							</table>
-						</div>
-					</div>
-					<div style="clear: both;">&nbsp;</div>
-				</div>
-				
-
-			</div>
-		</div>
-	</div>
-	
-</div>-->
-
+    <div class="container">
+        <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Update Your Phone Number</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="For verification" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="For verification" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="For verification" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="New Phone Number" required>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span id="messageMessage"></span>
+                    </div>
+                    <div id="error" class="alert alert-danger" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        <span id="errorMessage"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Phone Number</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
 </body>
 </html>
-
