@@ -62,7 +62,7 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
     </nav>
 
     <div class="container">
-        <form id="phoneChangerForm" action="https://starcanvasphp.herokuapp.com/Update.php?wsdl" method="post" style="width: 400px">
+        <form id="phoneChangerForm" action="Update.php" method="post" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Update Your Phone Number</h3>
