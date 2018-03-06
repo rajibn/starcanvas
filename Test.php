@@ -20,10 +20,10 @@ $mySforceConnection = new SforcePartnerClient();
 $mySforceConnection->createConnection("PartnerWSDL.xml");
 $mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
-echo $query = "SELECT Id, FirstName, LastName, Phone from Contact";
+$query = "SELECT Id, FirstName, LastName, Phone from Contact";
 $response = $mySforceConnection->query($query);
-echo $query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
-$response2 = $mySforceConnection->query($query1);
+//$query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
+//$response2 = $mySforceConnection->query($query1);
 
 ?>
 <div id="wrapper">
