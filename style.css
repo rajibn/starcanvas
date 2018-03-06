@@ -1,9 +1,5 @@
 
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 3.0 License
-*/
+
 table,td,tr,th
 {
 	border:1px solid #000;
@@ -12,7 +8,6 @@ table,td,tr,th
 body {
 	margin: 30px 0px 0px 0px;
 	padding: 0;
-	background: url(images/img01.jpg) repeat; 
 	font-family: 'Arvo', serif;
 	font-size: 13px;
 	color: #3E3B36;
