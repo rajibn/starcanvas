@@ -41,8 +41,8 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
   $fields = array (
   'Phone' => $phone
   );
-  $mySforceConnection1->FirstName = $firstName;
-  $mySforceConnection1->LastName = $lastName;
+  //$mySforceConnection1->FirstName = $firstName;
+  //$mySforceConnection1->LastName = $lastName;
   $mySforceConnection1->Email = $email;
 
   $mySforceConnection1->fields = $fields;
