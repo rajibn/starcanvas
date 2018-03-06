@@ -39,11 +39,10 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
   $fields = array (
   'Phone' => $phone
-  
   );
   $obj1->Id = '0037F00000R8IoTQAV';
-  $obj1->fields['Phone'] = $phone;
 
+  $obj1->fields = $fields;
   $updateResponse = $mySforceConnection1->update(array ($obj1));
   echo "***** Updating Contact *****\n";
   print_r($updateResponse);
