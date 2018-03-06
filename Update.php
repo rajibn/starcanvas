@@ -31,7 +31,8 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
     $phone = $_REQUEST['phone'];
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
      print_r($_REQUEST);   die;
-        
+     $query1 = "Update Contact set Phone="03321219999" where FirstName='".$firstName."' AND LastName='".$lastName."' ";
+     $response2 = $mySforceConnection1->query($query1);   
     }
     
 ?>
