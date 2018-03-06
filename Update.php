@@ -45,7 +45,7 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
     </nav>
 
     <div class="container">
-        <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
+        <form id="phoneChangerForm" action="" method="post" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Update Your Phone Number</h3>
