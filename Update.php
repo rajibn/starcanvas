@@ -48,7 +48,7 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
   $mySforceConnection1->fields = $fields;
   $updateResponse = $mySforceConnection1->update(array ($mySforceConnection1));
   //echo "***** Updating Contact *****\n";
-  //print_r($updateResponse);
+  print_r($updateResponse);
    
         
     }
