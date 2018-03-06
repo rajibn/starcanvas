@@ -21,6 +21,7 @@ $mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
 $query = "UPDATE Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
 $response = $mySforceConnection->query($query);
+	print_r($response);
 //$query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
 //$response2 = $mySforceConnection->query($query1);
 	
