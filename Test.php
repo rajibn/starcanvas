@@ -16,8 +16,9 @@ $mySforceConnection = new SforcePartnerClient();
 $mySforceConnection->createConnection("PartnerWSDL.xml");
 $mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
-$query = "SELECT Id, FirstName, LastName, Phone from Contact";
+echo $query = "SELECT Id, FirstName, LastName, Phone from Contact";
 $response = $mySforceConnection->query($query);
+	print_r($response);
 ?>
 <div id="wrapper">
 	<div id="page">
