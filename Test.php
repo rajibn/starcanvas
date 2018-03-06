@@ -8,7 +8,7 @@
 <?php
 define("USERNAME", "rajibnaskar@codaemonsoftwares.com");
 define("PASSWORD", "Kolkata2018");
-define("SECURITY_TOKEN", "4680821240202620815");
+define("SECURITY_TOKEN", "3MVG9d8..z.hDcPLRQ5Bwzc1G2fOHLOTGFq3OqayThBeUTH24SF5FWDFcSfMEaYojoLBbMjnFTHT_ZyWUBxWt"); //4680821240202620815
 
 require_once ('soapclient/SforcePartnerClient.php');
 
