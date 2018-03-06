@@ -25,6 +25,15 @@ require_once ('soapclient/SforcePartnerClient.php');
 $mySforceConnection1 = new SforcePartnerClient();
 $mySforceConnection1->createConnection("PartnerWSDL.xml");
 $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);	
+    $firstName = $_REQUEST['firstName'];
+    $lastName = $_REQUEST['lastName'];
+    $email = $_REQUEST['email'];
+    $phone = $_REQUEST['phone'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+     print_r($_REQUEST);   die;
+        
+    }
+    
 ?>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -44,19 +53,19 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
                 <div class="panel-body">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="For verification" required>
+                        <input type="text" class="form-control" id="firstName" name="firstName"  placeholder="For verification" required>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="For verification" required>
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="For verification" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="For verification" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="For verification" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="New Phone Number" required>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="New Phone Number" required>
                     </div>
                 </div>
                 <div class="panel-footer">
