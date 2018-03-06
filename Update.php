@@ -43,7 +43,7 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
   );
   //$mySforceConnection1->FirstName = $firstName;
   //$mySforceConnection1->LastName = $lastName;
-  $mySforceConnection1->Email = $email;
+  $mySforceConnection1->Id = '0037F00000R8IoTQAV';
 
   $mySforceConnection1->fields = $fields;
   $updateResponse = $mySforceConnection1->update(array ($mySforceConnection1));
