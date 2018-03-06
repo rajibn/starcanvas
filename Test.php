@@ -6,9 +6,9 @@
 </head>
 <body>
 <?php
-define("USERNAME", "jitendra.zaa@gmail.com");
-define("PASSWORD", "232BKHDJFUY79W3EWEHWIEHWI9EWE");
-define("SECURITY_TOKEN", "ASASALJSHWYE78YW876E8WDHDISHIDHSEWY9EWHD");
+define("USERNAME", "rajibnaskar@codaemonsoftwares.com");
+define("PASSWORD", "Kolkata2018");
+define("SECURITY_TOKEN", "4680821240202620815");
 
 require_once ('soapclient/SforcePartnerClient.php');
 
