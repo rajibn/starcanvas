@@ -15,7 +15,12 @@ define("PASSWORD", "Kolkata2018");
 define("SECURITY_TOKEN", "TQoyPnDyU3uBjFjiVVdS4ULjO"); //3MVG9d8..z.hDcPLRQ5Bwzc1G2fOHLOTGFq3OqayThBeUTH24SF5FWDFcSfMEaYojoLBbMjnFTHT_ZyWUBxWt
 
 require_once ('soapclient/SforcePartnerClient.php');
-
+$mySforceConnection1 = new SforcePartnerClient();
+$mySforceConnection1->createConnection("PartnerWSDL.xml");
+$mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
+$query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
+$response1 = $mySforceConnection1->query($query1);
+	
 $mySforceConnection = new SforcePartnerClient();
 $mySforceConnection->createConnection("PartnerWSDL.xml");
 $mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
@@ -24,6 +29,8 @@ $query = "SELECT Id, FirstName, LastName, Phone from Contact";
 $response = $mySforceConnection->query($query);
 //$query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
 //$response2 = $mySforceConnection->query($query1);
+	
+
 
 ?>
 <div id="wrapper">
