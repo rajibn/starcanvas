@@ -31,8 +31,24 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
     $phone = $_REQUEST['phone'];
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
      //print_r($_REQUEST);   die;
-     $query1 = "Update Contact set Phone="03321219999" where FirstName='".$firstName."' AND LastName='".$lastName."' ";
-     $response2 = $mySforceConnection1->query($query1);   
+     //$query1 = "Update Contact set Phone="03321219999" where FirstName='".$firstName."' AND LastName='".$lastName."' ";
+     //$response2 = $mySforceConnection1->query($query1);  
+        
+     
+  $mySforceConnection1->type = 'Contact';
+
+  $fields = array (
+  'Phone' => $phone
+  
+  );
+  $obj1->Id = '0037F00000R8IoTQAV';
+  $obj1->fields['Phone'] = $phone;
+
+  $updateResponse = $mySforceConnection1->update(array ($obj1));
+  echo "***** Updating Contact *****\n";
+  print_r($updateResponse);
+   
+        
     }
     
 ?>
