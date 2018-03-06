@@ -21,7 +21,8 @@ error_reporting(E_ALL);
 define("USERNAME", "rajibnaskar@codaemonsoftwares.com");
 define("PASSWORD", "Kolkata2018");
 define("SECURITY_TOKEN", "TQoyPnDyU3uBjFjiVVdS4ULjO"); //3MVG9d8..z.hDcPLRQ5Bwzc1G2fOHLOTGFq3OqayThBeUTH24SF5FWDFcSfMEaYojoLBbMjnFTHT_ZyWUBxWt
-require_once ('soapclient/SforcePartnerClient.php');	
+require_once ('soapclient/SforcePartnerClient.php');
+require_once ('soapclient/SforceHeaderOptions.php');
 $mySforceConnection1 = new SforcePartnerClient();
 $mySforceConnection1->createConnection("PartnerWSDL.xml");
 $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);	
