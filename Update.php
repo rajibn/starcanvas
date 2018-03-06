@@ -41,12 +41,14 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
   $fields = array (
   'Phone' => $phone
   );
-  $mySforceConnection1->Id = '0037F00000R8IoTQAV';
+  $mySforceConnection1->firstName = $firstName;
+  $mySforceConnection1->lastName = $lastName;
+  $mySforceConnection1->email = $email;
 
   $mySforceConnection1->fields = $fields;
   $updateResponse = $mySforceConnection1->update(array ($mySforceConnection1));
-  echo "***** Updating Contact *****\n";
-  print_r($updateResponse);
+  //echo "***** Updating Contact *****\n";
+  //print_r($updateResponse);
    
         
     }
@@ -86,15 +88,19 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
+                    <?php  if(!empty($updateResponse) && $updateResponse->success==1){  ?>
+                    <div id="message" class="alert alert-info" role="alert" >
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                        <span id="messageMessage"></span>
+                        <span id="messageMessage">Successfully updated!</span>
                     </div>
-                    <div id="error" class="alert alert-danger" role="alert" style="display: none;">
+                    <?php  } ?>
+                    <?php  if(!empty($updateResponse) && $updateResponse->success!=1){  ?>
+                    <div id="error" class="alert alert-danger" role="alert" >
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         <span class="sr-only">Error:</span>
-                        <span id="errorMessage"></span>
+                        <span id="errorMessage">Faild to update!</span>
                     </div>
+                    <?php  } ?>
                     <button type="submit" class="btn btn-primary">Update Phone Number</button>
                 </div>
             </div>
