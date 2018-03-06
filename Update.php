@@ -43,7 +43,7 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
   );
   $mySforceConnection1->firstName = $firstName;
   $mySforceConnection1->lastName = $lastName;
-  $mySforceConnection1->email = $email;
+  $mySforceConnection1->Email = $email;
 
   $mySforceConnection1->fields = $fields;
   $updateResponse = $mySforceConnection1->update(array ($mySforceConnection1));
@@ -93,8 +93,8 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <span id="messageMessage">Successfully updated!</span>
                     </div>
-                    <?php  } ?>
-                    <?php  if(!empty($updateResponse) && $updateResponse->success!=1){  ?>
+                    <?php  } else{ ?>
+                    
                     <div id="error" class="alert alert-danger" role="alert" >
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         <span class="sr-only">Error:</span>
