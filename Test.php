@@ -71,7 +71,7 @@ $response = $mySforceConnection->query($query);
 			      <th scope="col">Last Name</th>
 			      <th scope="col">Phone</th>
 			      <th scope="col">Email</th>
-			      <th scope="col">Email</th>    
+			      <th scope="col">GiftName</th>    
 			    </tr>
 			  </thead>
 			  <tbody>
