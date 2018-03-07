@@ -39,7 +39,7 @@ $response = $mySforceConnection->query($query);
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Contact Details</a>
+                <a class="navbar-brand" href="https://starcanvasphp.herokuapp.com/Test.php">Contact Details</a>
             </div>
         </div>
     </nav>
