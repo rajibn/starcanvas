@@ -22,11 +22,14 @@ define("USERNAME", "rajibnaskar@codaemonsoftwares.com");
 define("PASSWORD", "Kolkata2018");
 define("SECURITY_TOKEN", "TQoyPnDyU3uBjFjiVVdS4ULjO"); //3MVG9d8..z.hDcPLRQ5Bwzc1G2fOHLOTGFq3OqayThBeUTH24SF5FWDFcSfMEaYojoLBbMjnFTHT_ZyWUBxWt
 require_once ('soapclient/SforcePartnerClient.php');
-//$Id = $_REQUEST['Id'];
+$Id = $_REQUEST['Id'];
 $mySforceConnection1 = new SforcePartnerClient();
 $mySforceConnection1->createConnection("PartnerWSDL.xml");
 $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);	
     
+$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact Where Id="'.$Id.'"";
+$response = $mySforceConnection1->query($query);
+  print_r($response);  exit;
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Id= $_REQUEST['Id'];
     $firstName = $_REQUEST['firstName'];
