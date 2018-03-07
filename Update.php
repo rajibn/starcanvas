@@ -87,7 +87,7 @@ $response = $mySforceConnection1->query($query);
                 <div class="panel-body">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" value="<?php echo  $response->fields->FirstName; ?>" class="form-control" id="firstName" name="firstName"  placeholder="For verification" required>
+                        <input type="text" value="<?=$record->fields->FirstName?>" class="form-control" id="firstName" name="firstName"  placeholder="For verification" required>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
