@@ -77,6 +77,7 @@ $response = $mySforceConnection1->query($query);
 </nav>
 
     <div class="container">
+        <?php foreach ($response->records as $record) {	  ?> 
         <form id="phoneChangerForm" action="Update.php" method="post" style="width: 400px">
            <input type="hidden" id="Id" name="Id"  value="<?php echo $_REQUEST['Id'];?>" required>
             <div class="panel panel-default">
@@ -123,6 +124,7 @@ $response = $mySforceConnection1->query($query);
                 </div>
             </div>
         </form>
+        <?php } ?> 
     </div>
     
 </body>
