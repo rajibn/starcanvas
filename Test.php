@@ -51,66 +51,32 @@ $response = $mySforceConnection->query($query);
                     <h3 class="panel-title">Contact Details</h3>
                 </div>
                 <div class="panel-body">
-                   <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+			<table class="table">
+			  <thead class="thead-light">
+			    <tr>
+			      <th scope="col">Id</th>
+			      <th scope="col">First Name</th>
+			      <th scope="col">Last Name</th>
+			      <th scope="col">Phone</th>
+			      <th scope="col">Email</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			<?php foreach ($response->records as $record) {	  ?>
+			    <tr>
+			      <th scope="row"><?=$record->Id?></th>
+			      <td><?=$record->fields->FirstName?></td>
+			      <td><?=$record->fields->LastName?></td>
+			      <td><?=$record->fields->Phone?></td>
+			      <td><?=$record->fields->Email?></td>
+			    </tr>
+			<?php } ?>    
+			  </tbody>
+			</table> 
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-<?php foreach ($response->records as $record) {	  ?>
-    <tr>
-      <th scope="row"><?=$record->Id?></th>
-      <td><?=$record->fields->FirstName?></td>
-      <td><?=$record->fields->LastName?></td>
-      <td><?=$record->fields->Phone?></td>
-      <td><?=$record->fields->Email?></td>
-    </tr>
-<?php } ?>    
-  </tbody>
-</table> 
-                    
-                    
-                    
                 </div>
                 
             </div>
-        
     </div>
     
 </body>
