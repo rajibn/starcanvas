@@ -18,6 +18,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+$flag = '0';
 define("USERNAME", "rajibnaskar@codaemonsoftwares.com");
 define("PASSWORD", "Kolkata2018");
 define("SECURITY_TOKEN", "TQoyPnDyU3uBjFjiVVdS4ULjO"); //3MVG9d8..z.hDcPLRQ5Bwzc1G2fOHLOTGFq3OqayThBeUTH24SF5FWDFcSfMEaYojoLBbMjnFTHT_ZyWUBxWt
@@ -37,6 +38,7 @@ $response = $mySforceConnection1->query($query);
     $email = $_REQUEST['email'];
     $phone = $_REQUEST['phone'];
     $GiftName__c = $_REQUEST['GiftName__c'];
+    $GiftUrl__c = $_REQUEST['GiftUrl__c'];
      //print_r($_REQUEST);   die;
      //$query1 = "Update Contact set Phone="03321219999" where FirstName='".$firstName."' AND LastName='".$lastName."' ";
      //$response2 = $mySforceConnection1->query($query1);  
@@ -45,8 +47,12 @@ $response = $mySforceConnection1->query($query);
   $mySforceConnection1->type = 'Contact';
 
   $fields = array (
-  'Phone' => $phone,
-  'GiftName__c' => $GiftName__c
+  'FirstName'   => $firstName,
+  'LastName'   => $lastName,
+  'Email'       => $email,
+  'Phone'    => $phone,
+  'GiftName__c' => $GiftName__c,
+  'GiftUrl__c'  => $GiftUrl__c
   );
   //$mySforceConnection1->FirstName = $firstName;
   //$mySforceConnection1->LastName = $lastName;
@@ -55,9 +61,9 @@ $response = $mySforceConnection1->query($query);
   $mySforceConnection1->fields = $fields;
   $updateResponse = $mySforceConnection1->update(array ($mySforceConnection1));
   //echo "***** Updating Contact *****\n";
-  print_r($updateResponse);
+  if($updateResponse->success==1);
+   $flag='1';
    
-        
     }
     
 ?>
@@ -87,27 +93,31 @@ $response = $mySforceConnection1->query($query);
                 <div class="panel-body">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" value="<?=$record->fields->FirstName?>" class="form-control" id="firstName" name="firstName"  placeholder="For verification" required>
+                        <input type="text" value="<?=$record->fields->FirstName?>" class="form-control" id="firstName" name="firstName"  placeholder="New First Name" required>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="For verification" required>
+                        <input type="text" value="<?=$record->fields->LastName?>" class="form-control" id="lastName" name="lastName" placeholder="New Last Name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="For verification" required>
+                        <input type="email" value="<?=$record->fields->Email?>" class="form-control" id="email" name="email" placeholder="New Email" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="New Phone Number" required>
+                        <input type="tel" value="<?=$record->fields->Phone?>" class="form-control" id="phone" name="phone" placeholder="New Phone Number" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Gift Name</label>
-                        <input type="tel" class="form-control" id="GiftName__c" name="GiftName__c" placeholder="New Gift Name" required>
+                        <input type="tel" value="<?=$record->fields->GiftName__c?>" class="form-control" id="GiftName__c" name="GiftName__c" placeholder="New Gift Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Gift Url</label>
+                        <input type="tel" value="<?=$record->fields->GiftUrl__c?>" class="form-control" id="GiftName__c" name="GiftName__c" placeholder="New Gift Name" required>
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <?php  if(!empty($updateResponse) && $updateResponse->success==1){  ?>
+                    <?php  if($flag == '1'){  ?>
                     <div id="message" class="alert alert-info" role="alert" >
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <span id="messageMessage">Successfully updated!</span>
