@@ -27,9 +27,9 @@ $mySforceConnection1 = new SforcePartnerClient();
 $mySforceConnection1->createConnection("PartnerWSDL.xml");
 $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);	
     
-echo $query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact Where Id='$Id'";
+$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact Where Id='$Id'";
 $response = $mySforceConnection1->query($query);
-  print_r($response);  exit;
+  //print_r($response);  exit;
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Id= $_REQUEST['Id'];
     $firstName = $_REQUEST['firstName'];
@@ -86,7 +86,7 @@ $response = $mySforceConnection1->query($query);
                 <div class="panel-body">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName"  placeholder="For verification" required>
+                        <input type="text" value="<?php echo $response->firstName?>" class="form-control" id="firstName" name="firstName"  placeholder="For verification" required>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
