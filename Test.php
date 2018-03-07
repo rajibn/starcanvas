@@ -1,12 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-<title> Consume Partner WSDL of Salesforce using PHP
-</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List Contact Details</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
+    
 </head>
-<body>
-
-<?php
+    <?php
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
@@ -27,51 +35,83 @@ $response = $mySforceConnection->query($query);
 
 
 ?>
-<div id="wrapper">
-	<div id="page1">
-		<div id="page-bgtop">
-			<div id="page-bgbtm">
-				<div id="content">
-					<div class="post">
-						<h2 class="title"><a href="#"> Force.com Toolkit for PHP </a></h2>
-						<p class="meta"><span class="date">Using Partner WSDL</span><span class="posted">WebService</span></p>
-						<div style="clear: both;">&nbsp;</div>
-						<div class="entry">
-								<a href="javascript:void(0);">							
-								<?php
-									echo "Results of query '$query'<br/><br/>\n";
-								?>
-								</a>
-							<table>
-								<tr>
-									<th>Contact ID </th>
-									<th>First Name</th>
-									<th> Last Name </th>
-									<th>Phone </th>
-								</tr>
-								<?php
-									foreach ($response->records as $record) {
-										echo '<tr> 
-													<td>'.$record->Id.'</td>
-													<td>'.$record->fields->FirstName.'</td>
-													<td>'.$record->fields->LastName.'</td>
-													<td>'.$record->fields->Phone.'</td>
-											 </tr>';
-										 }
-								?>
-							</table>
-						</div>
-					</div>
-					<div style="clear: both;">&nbsp;</div>
-				</div>
-				<!-- end #content -->
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Contact Details</a>
+            </div>
+        </div>
+    </nav>
 
-			</div>
-		</div>
-	</div>
-	<!-- end #page -->
-</div>
-<!-- end #footer -->
+    <div class="container">
+        
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Contact Details</h3>
+                </div>
+                <div class="panel-body">
+                   <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php foreach ($response->records as $record) {	  ?>
+    <tr>
+      <th scope="row"><?=$record->Id?></th>
+      <td><?=$record->fields->FirstName?></td>
+      <td><?=$record->fields->LastName?></td>
+      <td><?=$record->fields->Phone?></td>
+      <td><?=$record->fields->Email?></td>
+    </tr>
+<?php } ?>    
+  </tbody>
+</table> 
+                    
+                    
+                    
+                </div>
+                
+            </div>
+        
+    </div>
+    
 </body>
 </html>
-
