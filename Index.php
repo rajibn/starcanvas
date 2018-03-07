@@ -85,7 +85,7 @@ $response = $mySforceConnection->query($query);
 			      <td><?=$record->fields->Phone?></td>
 			      <td><?=$record->fields->Email?></td>
 			      <td><?=$record->fields->GiftName__c?></td>
-			      <td><?=$record->fields->GiftUrl__c?></td>
+			      <td><a href="<?=$record->fields->GiftUrl__c?>" target="_blank" title="<?=$record->fields->GiftName__c?>" ><?=$record->fields->GiftUrl__c?></a></td>
 			      <td><a href="https://starcanvasphp.herokuapp.com/Update.php?Id=<?=$record->Id?>">
 				  <button type="button" class="btn btn-default btn-sm">
                                   <span class="glyphicon glyphicon-pencil">Edit</span> 
