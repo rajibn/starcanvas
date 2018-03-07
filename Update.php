@@ -22,7 +22,7 @@ define("USERNAME", "rajibnaskar@codaemonsoftwares.com");
 define("PASSWORD", "Kolkata2018");
 define("SECURITY_TOKEN", "TQoyPnDyU3uBjFjiVVdS4ULjO"); //3MVG9d8..z.hDcPLRQ5Bwzc1G2fOHLOTGFq3OqayThBeUTH24SF5FWDFcSfMEaYojoLBbMjnFTHT_ZyWUBxWt
 require_once ('soapclient/SforcePartnerClient.php');
-
+$Id = $_REQUEST['Id'];
 $mySforceConnection1 = new SforcePartnerClient();
 $mySforceConnection1->createConnection("PartnerWSDL.xml");
 $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);	
@@ -30,7 +30,14 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
     $lastName = $_REQUEST['lastName'];
     $email = $_REQUEST['email'];
     $phone = $_REQUEST['phone'];
+    $phone = $_REQUEST['phone'];
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $Id= $_REQUEST['Id'];
+    $firstName = $_REQUEST['firstName'];
+    $lastName = $_REQUEST['lastName'];
+    $email = $_REQUEST['email'];
+    $phone = $_REQUEST['phone'];
+    $GiftName__c = $_REQUEST['GiftName__c'];
      //print_r($_REQUEST);   die;
      //$query1 = "Update Contact set Phone="03321219999" where FirstName='".$firstName."' AND LastName='".$lastName."' ";
      //$response2 = $mySforceConnection1->query($query1);  
@@ -39,11 +46,12 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
   $mySforceConnection1->type = 'Contact';
 
   $fields = array (
-  'Phone' => $phone
+  'Phone' => $phone,
+  'GiftName__c' => $GiftName__c
   );
   //$mySforceConnection1->FirstName = $firstName;
   //$mySforceConnection1->LastName = $lastName;
-  $mySforceConnection1->Id = '0037F00000R8IoTQAV';
+  $mySforceConnection1->Id = $Id;
 
   $mySforceConnection1->fields = $fields;
   $updateResponse = $mySforceConnection1->update(array ($mySforceConnection1));
@@ -71,6 +79,7 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
     <div class="container">
         <form id="phoneChangerForm" action="Update.php" method="post" style="width: 400px">
+           <input type="hidden" class="form-control" id="Id" name="Id"  value="<?=$Id>" required>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Update Your Phone Number</h3>
@@ -91,6 +100,10 @@ $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);
                     <div class="form-group">
                         <label for="phone">Phone</label>
                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="New Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Gift Name</label>
+                        <input type="tel" class="form-control" id="GiftName__c" name="GiftName__c" placeholder="New Gift Name" required>
                     </div>
                 </div>
                 <div class="panel-footer">
