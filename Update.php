@@ -27,7 +27,7 @@ $mySforceConnection1 = new SforcePartnerClient();
 $mySforceConnection1->createConnection("PartnerWSDL.xml");
 $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);	
     
-$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact Where Id="'.$Id.'"";
+echo $query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact Where Id='$Id'";
 $response = $mySforceConnection1->query($query);
   print_r($response);  exit;
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
