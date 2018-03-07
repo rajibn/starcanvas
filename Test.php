@@ -27,7 +27,7 @@ $mySforceConnection = new SforcePartnerClient();
 $mySforceConnection->createConnection("PartnerWSDL.xml");
 $mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
-$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c from Contact";
+$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact";
 $response = $mySforceConnection->query($query);
 //$query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
 //$response2 = $mySforceConnection->query($query1);
@@ -72,6 +72,7 @@ $response = $mySforceConnection->query($query);
 			      <th scope="col">Phone</th>
 			      <th scope="col">Email</th>
 			      <th scope="col">GiftName</th>
+			      <th scope="col">GiftUrl</th>
 		              <th scope="col">Action</th>    
 			    </tr>
 			  </thead>
@@ -84,6 +85,7 @@ $response = $mySforceConnection->query($query);
 			      <td><?=$record->fields->Phone?></td>
 			      <td><?=$record->fields->Email?></td>
 			      <td><?=$record->fields->GiftName__c?></td>
+			      <td><?=$record->fields->GiftUrl__c?></td>
 			      <td><a href="https://starcanvasphp.herokuapp.com/Update.php?Id=<?=$record->Id?>">
 				  <button type="button" class="btn btn-default btn-sm">
                                   <span class="glyphicon glyphicon-pencil">Edit</span> 
