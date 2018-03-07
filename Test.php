@@ -50,7 +50,7 @@ $response = $mySforceConnection->query($query);
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="https://starcanvasphp.herokuapp.com/Test.php">Home</a></li>
-      <li><a href="https://starcanvasphp.herokuapp.com/Update.php">Update Contact</a></li>
+      <!--<li><a href="https://starcanvasphp.herokuapp.com/Update.php">Update Contact</a></li>-->
       <li><a href="https://starcanvasphp.herokuapp.com/Test.php" target="_blank"><button type="button" class="btn btn-warning">Click View Canvas App</button></a></li>
       <!--<li><a href="#">Page 3</a></li>-->
     </ul>
