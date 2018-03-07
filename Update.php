@@ -26,11 +26,7 @@ $Id = $_REQUEST['Id'];
 $mySforceConnection1 = new SforcePartnerClient();
 $mySforceConnection1->createConnection("PartnerWSDL.xml");
 $mySforceConnection1->login(USERNAME, PASSWORD.SECURITY_TOKEN);	
-    $firstName = $_REQUEST['firstName'];
-    $lastName = $_REQUEST['lastName'];
-    $email = $_REQUEST['email'];
-    $phone = $_REQUEST['phone'];
-    $phone = $_REQUEST['phone'];
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Id= $_REQUEST['Id'];
     $firstName = $_REQUEST['firstName'];
