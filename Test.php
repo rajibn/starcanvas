@@ -27,7 +27,7 @@ $mySforceConnection = new SforcePartnerClient();
 $mySforceConnection->createConnection("PartnerWSDL.xml");
 $mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
-$query = "SELECT Id, FirstName, LastName, Phone, Email from Contact";
+$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName from Contact";
 $response = $mySforceConnection->query($query);
 //$query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
 //$response2 = $mySforceConnection->query($query1);
@@ -71,6 +71,7 @@ $response = $mySforceConnection->query($query);
 			      <th scope="col">Last Name</th>
 			      <th scope="col">Phone</th>
 			      <th scope="col">Email</th>
+			      <th scope="col">Email</th>    
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -81,6 +82,7 @@ $response = $mySforceConnection->query($query);
 			      <td><?=$record->fields->LastName?></td>
 			      <td><?=$record->fields->Phone?></td>
 			      <td><?=$record->fields->Email?></td>
+			      <td><?=$record->fields->GiftName?></td>    
 			    </tr>
 			<?php } ?>    
 			  </tbody>
