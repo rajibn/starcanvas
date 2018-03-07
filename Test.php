@@ -66,23 +66,30 @@ $response = $mySforceConnection->query($query);
 			<table class="table">
 			  <thead class="thead-light">
 			    <tr>
-			      <th scope="col">Id</th>
+			      <!--<th scope="col">Id</th>-->
 			      <th scope="col">First Name</th>
 			      <th scope="col">Last Name</th>
 			      <th scope="col">Phone</th>
 			      <th scope="col">Email</th>
-			      <th scope="col">GiftName</th>    
+			      <th scope="col">GiftName</th>
+		              <th scope="col">Action</th>    
 			    </tr>
 			  </thead>
 			  <tbody>
 			<?php foreach ($response->records as $record) {	  ?>
 			    <tr>
-			      <th scope="row"><?=$record->Id?></th>
+			      <!--<th scope="row"><?=$record->Id?></th>-->
 			      <td><?=$record->fields->FirstName?></td>
 			      <td><?=$record->fields->LastName?></td>
 			      <td><?=$record->fields->Phone?></td>
 			      <td><?=$record->fields->Email?></td>
-			      <td><?=$record->fields->GiftName__c?></td>    
+			      <td><?=$record->fields->GiftName__c?></td>
+			      <td><a href="https://starcanvasphp.herokuapp.com/Update.php?Id=<?=$record->Id?>">
+				  <button type="button" class="btn btn-default btn-sm">
+                                  <span class="glyphicon glyphicon-pencil"></span> Pencil 
+				  </button>
+				  </a>
+			     </td> 
 			    </tr>
 			<?php } ?>    
 			  </tbody>
