@@ -27,7 +27,7 @@ $mySforceConnection = new SforcePartnerClient();
 $mySforceConnection->createConnection("PartnerWSDL.xml");
 $mySforceConnection->login(USERNAME, PASSWORD.SECURITY_TOKEN);
 
-$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact";
+$query = "SELECT Id, FirstName, LastName, Phone, Email, GiftName__c, GiftUrl__c from Contact WHERE Id="0037F00000R8IoTQAV"";
 $response = $mySforceConnection->query($query);
 //$query1 = "Update Contact set Phone="03321219999" where Id="0037F00000RT4oZQAT"";
 //$response2 = $mySforceConnection->query($query1);
