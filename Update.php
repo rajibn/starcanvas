@@ -15,9 +15,9 @@
     
 </head>
     <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 $flag = '0';
 define("USERNAME", "rajibnaskar@codaemonsoftwares.com");
 define("PASSWORD", "Kolkata2018");
@@ -75,7 +75,7 @@ $response = $mySforceConnection1->query($query);
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="https://starcanvasphp.herokuapp.com/Test.php">Home</a></li>
-      <li><a href="https://starcanvasphp.herokuapp.com/Update.php">Update Contact</a></li>
+      
       <li><a href="https://starcanvasphp.herokuapp.com/Test.php" target="_blank"><button type="button" class="btn btn-warning">Click View Canvas App</button></a></li>
       <!--<li><a href="#">Page 3</a></li>-->
     </ul>
@@ -109,11 +109,11 @@ $response = $mySforceConnection1->query($query);
                     </div>
                     <div class="form-group">
                         <label for="phone">Gift Name</label>
-                        <input type="tel" value="<?=$record->fields->GiftName__c?>" class="form-control" id="GiftName__c" name="GiftName__c" placeholder="New Gift Name" required>
+                        <input type="tel" value="<?=$record->fields->GiftName__c?>" class="form-control" id="GiftName__c" name="GiftName__c" placeholder="New Gift Name">
                     </div>
                     <div class="form-group">
                         <label for="phone">Gift Url</label>
-                        <input type="tel" value="<?=$record->fields->GiftUrl__c?>" class="form-control" id="GiftName__c" name="GiftName__c" placeholder="New Gift Name" required>
+                        <input type="tel" value="<?=$record->fields->GiftUrl__c?>" class="form-control" id="GiftUrl__c" name="GiftUrl__c" placeholder="New Gift URL">
                     </div>
                 </div>
                 <div class="panel-footer">
@@ -122,15 +122,15 @@ $response = $mySforceConnection1->query($query);
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <span id="messageMessage">Successfully updated!</span>
                     </div>
-                    <?php  } else{ ?>
+                    <?php } ?>
                     
-                    <div id="error" class="alert alert-danger" role="alert" >
+                    <!--<div id="error" class="alert alert-danger" role="alert" >
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         <span class="sr-only">Error:</span>
                         <span id="errorMessage">Faild to update!</span>
-                    </div>
-                    <?php  } ?>
-                    <button type="submit" class="btn btn-primary">Update Phone Number</button>
+                    </div>-->
+                    
+                    <button type="submit" class="btn btn-primary">Update Contact</button>
                 </div>
             </div>
         </form>
